@@ -11,16 +11,24 @@ node () {
  			// Batch build step
 bat """ 
 cd services
-start python user.py
-start python movies.py
-start python bookings.py
-start python showtimes.py
+start python user.py /k
+TIMEOUT 7
+start python movies.py /k
+TIMEOUT 7
+start python bookings.py /k
+TIMEOUT 7
+start python showtimes.py /k
+TIMEOUT 7
 cd ..
 cd tests
 python bookings.py
+TIMEOUT 7
 python movies.py
+TIMEOUT 7
 python showtimes.py
+TIMEOUT 7
 python user.py 
+TIMEOUT 7
  """
 		// JUnit Results
 		junit 'tests/test-reports/*.xml' 
