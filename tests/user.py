@@ -74,24 +74,7 @@ class TestUserService(unittest.TestCase):
         self.assertEqual(actual_reply['id'],user_data['id'])
         self.assertEqual(actual_reply['name'],user_data['name'])
 
-    def test_view_user_booking(self):
-      fillsqlitetable()
-      user_id = "chris_rivers"
-      item = {
-                "20151201": [
-                  {
-                    "rating": 8.8,
-                    "title": "Creed",
-                    "uri": "/movies/267eedb8-0f5d-42d5-8f43-72426b9fb3e6"
-                  }
-                ]
-             }
-      actual_reply = requests.get("{}/{}/bookings".format(self.url,user_id))
-      actual_reply = actual_reply.json()
-
-      self.assertTrue(item["20151201"] <= actual_reply["20151201"])
-
-     
+    
 GOOD_RESPONSES = {
   "chris_rivers" : {
     "id": "chris_rivers",
