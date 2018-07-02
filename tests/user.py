@@ -120,18 +120,7 @@ class TestUserService(unittest.TestCase):
       actual_reply = actual_reply.json()
       self.assertTrue(item!=actual_reply)
 
-    def test_book_movie(self):
-      fillsqlitetable()
-      payload = {
-          'movie_id': "39ab85e5-5e8e-4dc5-afea-65dc368bd7ab",
-          'showtime_id': "20151205",
-          'user_id': "chris_rivers"
-        }
-      actual_reply = requests.post("{}/order".format(self.url),data=payload)
-      actual_reply = actual_reply.json()
-      self.assertTrue(payload['movie_id'] in actual_reply[payload['user_id']][payload['showtime_id']])
-
-
+   
 GOOD_RESPONSES = {
   "chris_rivers" : {
     "id": "chris_rivers",
