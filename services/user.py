@@ -113,6 +113,8 @@ def user_record(username):
 
 @app.route("/users/add",methods=['POST'])
 def user_create():
+
+    print 'user_create'	
     _id = request.form.get('id')
     _name = request.form.get('name')
     if not _id == None and not _name==None:
@@ -120,6 +122,8 @@ def user_create():
         return nice_json(get_users()[_id])
     else:
         abort(404)
+
+    print 'end_create_user'
 
 
 @app.route("/users/<username>/bookings", methods=['GET'])
