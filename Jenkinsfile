@@ -11,11 +11,11 @@ node () {
  			// Batch build step
 bat """ 
 cd services
+start python bookings.py /k
 start python user.py /k
 start python movies.py /k
-start python bookings.py /k
 start python showtimes.py /k
-pause 30
+ping 127.0.0.1 -n 10 > nul
 cd ..
 cd tests
 python bookings.py
