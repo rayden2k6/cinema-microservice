@@ -182,7 +182,9 @@ def user_suggested(username):
     :param username:
     :return: Suggested movies
     """
+    print 'user_suggested'
     response = requests.get('http://localhost:5001/movies/rank/{}'.format(username))
+    print 'responsed'
     if response.status_code == 200:
         return nice_json(response.json())
     else:
