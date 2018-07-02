@@ -15,7 +15,7 @@ start python user.py /k
 start python movies.py /k
 start python bookings.py /k
 start python showtimes.py /k
-pause 20
+sleep 25
 cd ..
 cd tests
 python bookings.py
