@@ -63,8 +63,8 @@ class TestBookingService(unittest.TestCase):
                              actual_reply.status_code))
 
     def test_add_new_booking(self):
-       fillsqlitetable()
-       payload = {
+        fillsqlitetable()
+        payload = {
             'movieid' : "7daf7208-be4d-4944-a3ae-c1c2f516f3e6",
             'userid': "chris_rivers",
             'showtimeid': "20151201"
