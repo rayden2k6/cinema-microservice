@@ -62,16 +62,16 @@ class TestBookingService(unittest.TestCase):
                          "Got {} but expected 404".format(
                              actual_reply.status_code))
 
-    ##def test_add_new_booking(self):
-     #  fillsqlitetable()
-      #  payload = {
-       #     'movieid' : "7daf7208-be4d-4944-a3ae-c1c2f516f3e6",
-        #    'userid': "chris_rivers",
-         #   'showtimeid': "20151201"
-        #}
-        #actual_reply = requests.post(self.url,data = payload)
-        #actual_reply = actual_reply.json()
-        #self.assertEqual(set(actual_reply[payload['userid']][payload['showtimeid']]),set(GOOD_RESPONSES[payload['userid']][payload['showtimeid']]+[payload['movieid']]))
+    def test_add_new_booking(self):
+       fillsqlitetable()
+       payload = {
+            'movieid' : "7daf7208-be4d-4944-a3ae-c1c2f516f3e6",
+            'userid': "chris_rivers",
+            'showtimeid': "20151201"
+        }
+        actual_reply = requests.post(self.url,data = payload)
+        actual_reply = actual_reply.json()
+        self.assertEqual(set(actual_reply[payload['userid']][payload['showtimeid']]),set(GOOD_RESPONSES[payload['userid']][payload['showtimeid']]+[payload['movieid']]))
 
     def test_delete_booking(self):
         fillsqlitetable()
