@@ -91,36 +91,7 @@ class TestUserService(unittest.TestCase):
 
       self.assertTrue(item["20151201"] <= actual_reply["20151201"])
 
-    def test_user_suggested(self):
-      fillsqlitetable()
-      user_id = 'chris_rivers'
-      item = {
-              "movies": [
-                {
-                  "director": "Ryan Coogler",
-                  "id": "267eedb8-0f5d-42d5-8f43-72426b9fb3e6",
-                  "rating": 8.8,
-                  "title": "Creed"
-                },
-                {
-                  "director": "Ridley Scott",
-                  "id": "a8034f44-aee4-44cf-b32c-74cf452aaaae",
-                  "rating": 8.2,
-                  "title": "The Martian"
-                },
-                {
-                  "director": "Peter Sohn",
-                  "id": "720d006c-3a57-4b6a-b18f-9b713b073f3c",
-                  "rating": 7.4,
-                  "title": "The Good Dinosaur"
-                }
-              ]
-            }
-      actual_reply = requests.get("{}/{}/suggested".format(self.url,user_id))
-      actual_reply = actual_reply.json()
-      self.assertTrue(item!=actual_reply)
-
-   
+     
 GOOD_RESPONSES = {
   "chris_rivers" : {
     "id": "chris_rivers",
