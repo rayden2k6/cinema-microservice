@@ -107,7 +107,7 @@ def users_list():
 def user_record(username):
     username = username.encode('ascii','ignore')
     if username not in get_users().iterkeys():
-        raise NotFound
+        raise NotFound("User '{}' not found.".format(username))
 
     return nice_json(get_user_by_id(username))
 
