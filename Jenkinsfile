@@ -22,11 +22,8 @@ TIMEOUT 7
 cd ..
 cd tests
 python bookings.py
-TIMEOUT 7
 python movies.py
-TIMEOUT 7
 python showtimes.py
-TIMEOUT 7
 python user.py 
 TIMEOUT 7
  """
