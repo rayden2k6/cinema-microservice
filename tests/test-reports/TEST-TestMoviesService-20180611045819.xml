@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<testsuite errors="3" failures="0" name="TestMoviesService-20180611045819" tests="5" time="0.107">
+	<testcase classname="TestMoviesService" name="test_movie_rating_update" time="0.058"/>
+	<testcase classname="TestMoviesService" name="test_not_found" time="0.007"/>
+	<testcase classname="TestMoviesService" name="test_all_movie_records" time="0.023">
+		<error message="Items in the first set but not the second:
+(u'rating', 4.6)
+Items in the second set but not the first:
+('rating', 8.2)" type="AssertionError">
+<![CDATA[Traceback (most recent call last):
+  File "movies.py", line 17, in test_all_movie_records
+    self.assertEqual( set(actual_reply.items()), set(expected.items()))
+AssertionError: Items in the first set but not the second:
+(u'rating', 4.6)
+Items in the second set but not the first:
+('rating', 8.2)
+]]>		</error>
+	</testcase>
+	<testcase classname="TestMoviesService" name="test_movie_delete" time="0.008">
+		<error message="No JSON object could be decoded" type="ValueError">
+<![CDATA[Traceback (most recent call last):
+  File "movies.py", line 32, in test_movie_delete
+    actual_reply = actual_reply.json()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+]]>		</error>
+	</testcase>
+	<testcase classname="TestMoviesService" name="test_movie_ranking" time="0.012">
+		<error message="Lists differ: [{u'director': u'Ryan Coogler'... != [{'director': 'Ryan Coogler', ...
+
+First differing element 1:
+{u'director': u'Jonathan Levine', u'rating': 7.4, u'id': u'96798c08-d19b-4986-a05d-7da856efb697', u'title': u'The Night Before'}
+{'director': 'Ridley Scott', 'rating': 8.2, 'uri': '/movies/a8034f44-aee4-44cf-b32c-74cf452aaaae', 'id': 'a8034f44-aee4-44cf-b32c-74cf452aaaae', 'title': 'The Martian'}
+
+Diff is 919 characters long. Set self.maxDiff to None to see it." type="AssertionError">
+<![CDATA[Traceback (most recent call last):
+  File "movies.py", line 53, in test_movie_ranking
+    self.assertEqual(actual_reply['movies'],top)
+AssertionError: Lists differ: [{u'director': u'Ryan Coogler'... != [{'director': 'Ryan Coogler', ...
+
+First differing element 1:
+{u'director': u'Jonathan Levine', u'rating': 7.4, u'id': u'96798c08-d19b-4986-a05d-7da856efb697', u'title': u'The Night Before'}
+{'director': 'Ridley Scott', 'rating': 8.2, 'uri': '/movies/a8034f44-aee4-44cf-b32c-74cf452aaaae', 'id': 'a8034f44-aee4-44cf-b32c-74cf452aaaae', 'title': 'The Martian'}
+
+Diff is 919 characters long. Set self.maxDiff to None to see it.
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

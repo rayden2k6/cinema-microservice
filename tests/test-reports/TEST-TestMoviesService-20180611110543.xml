@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="TestMoviesService-20180611110543" tests="5" time="0.161">
+	<testcase classname="TestMoviesService" name="test_all_movie_records" time="0.063"/>
+	<testcase classname="TestMoviesService" name="test_movie_delete" time="0.064"/>
+	<testcase classname="TestMoviesService" name="test_movie_rating_update" time="0.019"/>
+	<testcase classname="TestMoviesService" name="test_not_found" time="0.008"/>
+	<testcase classname="TestMoviesService" name="test_movie_ranking" time="0.008">
+		<error message="No JSON object could be decoded" type="ValueError">
+<![CDATA[Traceback (most recent call last):
+  File "movies.py", line 52, in test_movie_ranking
+    actual_reply = actual_reply.json()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

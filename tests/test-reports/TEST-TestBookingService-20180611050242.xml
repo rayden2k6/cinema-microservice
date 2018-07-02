@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="TestBookingService-20180611050242" tests="4" time="0.657">
+	<testcase classname="TestBookingService" name="test_add_new_booking" time="0.133"/>
+	<testcase classname="TestBookingService" name="test_booking_records" time="0.405"/>
+	<testcase classname="TestBookingService" name="test_not_found" time="0.088"/>
+	<testcase classname="TestBookingService" name="test_delete_booking" time="0.030">
+		<error message="No JSON object could be decoded" type="ValueError">
+<![CDATA[Traceback (most recent call last):
+  File "bookings.py", line 52, in test_delete_booking
+    actual_reply = actual_reply.json()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[garret_heaton {'20151201': ['267eedb8-0f5d-42d5-8f43-72426b9fb3e6'], '20151202': ['276c79ec-a26a-40a6-b3d3-fb242a5947b6']}
+dwight_schrute {'20151205': ['a8034f44-aee4-44cf-b32c-74cf452aaaae', '276c79ec-a26a-40a6-b3d3-fb242a5947b6'], '20151201': ['7daf7208-be4d-4944-a3ae-c1c2f516f3e6', '267eedb8-0f5d-42d5-8f43-72426b9fb3e6']}
+chris_rivers {'20151201': ['267eedb8-0f5d-42d5-8f43-72426b9fb3e6']}
+]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

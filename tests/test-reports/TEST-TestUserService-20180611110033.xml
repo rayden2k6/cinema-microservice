@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="TestUserService-20180611110033" tests="6" time="1.353">
+	<testcase classname="TestUserService" name="test_add_user" time="0.209"/>
+	<testcase classname="TestUserService" name="test_book_movie" time="0.186"/>
+	<testcase classname="TestUserService" name="test_user_not_found" time="0.056"/>
+	<testcase classname="TestUserService" name="test_user_records" time="0.170"/>
+	<testcase classname="TestUserService" name="test_user_suggested" time="0.392"/>
+	<testcase classname="TestUserService" name="test_view_user_booking" time="0.342">
+		<error message="False is not true" type="AssertionError">
+<![CDATA[Traceback (most recent call last):
+  File "user.py", line 92, in test_view_user_booking
+    self.assertTrue(item["20151201"][0] in actual_reply["20151201"])
+AssertionError: False is not true
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

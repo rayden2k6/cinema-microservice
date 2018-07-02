@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<testsuite errors="4" failures="0" name="TestMoviesService-20180611111351" tests="4" time="0.065">
+	<testcase classname="TestMoviesService" name="test_all_movie_records" time="0.060">
+		<error message="global name 'json' is not defined" type="NameError">
+<![CDATA[Traceback (most recent call last):
+  File "movies.py", line 55, in test_all_movie_records
+    fillsqlitetable()
+  File "movies.py", line 39, in fillsqlitetable
+    jsondb = json.load(open('../database/movies.json','r'))
+NameError: global name 'json' is not defined
+]]>		</error>
+	</testcase>
+	<testcase classname="TestMoviesService" name="test_movie_delete" time="0.002">
+		<error message="global name 'json' is not defined" type="NameError">
+<![CDATA[Traceback (most recent call last):
+  File "movies.py", line 71, in test_movie_delete
+    fillsqlitetable()
+  File "movies.py", line 39, in fillsqlitetable
+    jsondb = json.load(open('../database/movies.json','r'))
+NameError: global name 'json' is not defined
+]]>		</error>
+	</testcase>
+	<testcase classname="TestMoviesService" name="test_movie_rating_update" time="0.001">
+		<error message="global name 'json' is not defined" type="NameError">
+<![CDATA[Traceback (most recent call last):
+  File "movies.py", line 86, in test_movie_rating_update
+    fillsqlitetable()
+  File "movies.py", line 39, in fillsqlitetable
+    jsondb = json.load(open('../database/movies.json','r'))
+NameError: global name 'json' is not defined
+]]>		</error>
+	</testcase>
+	<testcase classname="TestMoviesService" name="test_not_found" time="0.001">
+		<error message="global name 'json' is not defined" type="NameError">
+<![CDATA[Traceback (most recent call last):
+  File "movies.py", line 63, in test_not_found
+    fillsqlitetable()
+  File "movies.py", line 39, in fillsqlitetable
+    jsondb = json.load(open('../database/movies.json','r'))
+NameError: global name 'json' is not defined
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

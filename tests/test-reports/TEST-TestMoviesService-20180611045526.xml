@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="TestMoviesService-20180611045526" tests="5" time="0.201">
+	<testcase classname="TestMoviesService" name="test_all_movie_records" time="0.067"/>
+	<testcase classname="TestMoviesService" name="test_movie_delete" time="0.074"/>
+	<testcase classname="TestMoviesService" name="test_movie_rating_update" time="0.037"/>
+	<testcase classname="TestMoviesService" name="test_not_found" time="0.008"/>
+	<testcase classname="TestMoviesService" name="test_movie_ranking" time="0.016">
+		<error message="Lists differ: [{u'director': u'Ryan Coogler'... != [{'director': 'Ryan Coogler', ...
+
+First differing element 0:
+{u'director': u'Ryan Coogler', u'rating': 8.8, u'id': u'267eedb8-0f5d-42d5-8f43-72426b9fb3e6', u'title': u'Creed'}
+{'director': 'Ryan Coogler', 'rating': 8.8, 'uri': '/movies/267eedb8-0f5d-42d5-8f43-72426b9fb3e6', 'id': '267eedb8-0f5d-42d5-8f43-72426b9fb3e6', 'title': 'Creed'}
+
+Diff is 1123 characters long. Set self.maxDiff to None to see it." type="AssertionError">
+<![CDATA[Traceback (most recent call last):
+  File "movies.py", line 53, in test_movie_ranking
+    self.assertEqual(actual_reply['movies'],top)
+AssertionError: Lists differ: [{u'director': u'Ryan Coogler'... != [{'director': 'Ryan Coogler', ...
+
+First differing element 0:
+{u'director': u'Ryan Coogler', u'rating': 8.8, u'id': u'267eedb8-0f5d-42d5-8f43-72426b9fb3e6', u'title': u'Creed'}
+{'director': 'Ryan Coogler', 'rating': 8.8, 'uri': '/movies/267eedb8-0f5d-42d5-8f43-72426b9fb3e6', 'id': '267eedb8-0f5d-42d5-8f43-72426b9fb3e6', 'title': 'Creed'}
+
+Diff is 1123 characters long. Set self.maxDiff to None to see it.
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

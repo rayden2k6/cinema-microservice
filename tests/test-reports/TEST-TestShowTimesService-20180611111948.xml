@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<testsuite errors="0" failures="0" name="TestShowTimesService-20180611111948" tests="2" time="0.122">
+	<testcase classname="TestShowTimesService" name="test_not_found" time="0.020"/>
+	<testcase classname="TestShowTimesService" name="test_showtimes_records" time="0.102"/>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<testsuite errors="0" failures="0" name="TestUserService-20180611111953" tests="6" time="0.902">
+	<testcase classname="TestUserService" name="test_add_user" time="0.099"/>
+	<testcase classname="TestUserService" name="test_book_movie" time="0.148"/>
+	<testcase classname="TestUserService" name="test_user_not_found" time="0.024"/>
+	<testcase classname="TestUserService" name="test_user_records" time="0.067"/>
+	<testcase classname="TestUserService" name="test_user_suggested" time="0.297"/>
+	<testcase classname="TestUserService" name="test_view_user_booking" time="0.268"/>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

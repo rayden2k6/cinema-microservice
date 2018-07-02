@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+		<style>
+			.main-view{
+				margin: 100px;
+			}
+			h2{
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main-view">
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVcZW-uX1h78OXwxxKYZqs4FT17Wr3txVhdV7aT9JvqF5hr_YN"> <h2>User Management System</h2>
+		<table class="table table-striped">
+			
+			<tbody id="contents">
+				<tr><th>Name</th><th>Last-Active</th><th>Bookings</th></tr>
+			</tbody>
+		</table>
+		</div>
+				<script type="text/javascript">
+					function time(s) {
+    return new Date(s * 1e3).toISOString().slice(-13, -5);
+}
+			$.getJSON( "/users/statuses", function( data ) {
+				  keys = Object.keys(data)
+				  //console.log(keys)
+				  // console.log(keys)
+				  items = []
+				  value = "<tr><th>Name</th><th>Last-Active</th><th>Bookings</th></tr>"
+				  for(var count=0; count < keys.length ; count++){
+				  	if(data[keys[count]] != null){
+					  	_object = data[keys[count]]
+					  	name = _object['name']
+					  	last_active = time(parseInt(_object['last_active']))
+					  	bookings = _object['bookings']
+					  	section_elements = ""
+					  	if(bookings != null){
+						  	bkeys = Object.keys(bookings)
+						  	
+						  	for(var bcount =0; bcount < bkeys.length;bcount++){
+						  		elements = ""
+						  		for( var mcount=0; mcount < bookings[bkeys[bcount]].length;mcount++){
+						  			movie = bookings[bkeys[bcount]][mcount]
+						  			entry = bkeys[bcount]+' - '+movie
+						  			// console.log(entry)
+						  			elements += entry+', '
+						  		}
+						  		section_elements+= elements+"<br>"
+						  	}
+						  }
+						  value+="<tr>"+"<td>"+name+"</td>"+"<td>"+last_active+"</td>"+"<td>"+section_elements+"</td>"+"</tr>"
+					}
+					var table = document.getElementById('contents')
+					table.innerHTML = value
+				  	// last_active = data[key]['last_active']
+				  	// booking_keys = Object.keys(data['bookings'])
+				  	// for(var booking_key in booking_keys){
+				  	// 	console.log(data[key][booking_key])
+				  	// }
+				  }
+				});
+		</script>
+	</body>
+</html>
