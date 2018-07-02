@@ -173,23 +173,6 @@ def user_bookings(username):
 
     return nice_json(result)
 
-
-@app.route("/users/<username>/suggested", methods=['GET'])
-def user_suggested(username):
-    """
-    Returns movie suggestions. The algorithm returns a list of 3 top ranked
-    movies that the user has not yet booked.
-    :param username:
-    :return: Suggested movies
-    """
-    print 'user_suggested'
-    response = requests.get('http://localhost:5001/movies/rank/{}'.format(username))
-    print 'responsed'
-    if response.status_code == 200:
-        return nice_json(response.json())
-    else:
-        raise ServiceUnavailable("The Movies Service is unavailable")
-
 @app.route("/users/order",methods=["POST"])
 def order_movie_():
     movie_id = request.form['movie_id']
