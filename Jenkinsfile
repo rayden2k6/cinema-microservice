@@ -15,7 +15,7 @@ start python user.py /k
 start python movies.py /k
 start python bookings.py /k
 start python showtimes.py /k
-ping 127.0.0.1 -n 150 > nul
+ping 127.0.0.1 -n 100 > nul
 cd ..
 cd tests
 python bookings.py
