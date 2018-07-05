@@ -18,6 +18,8 @@ start python showtimes.py /k
 ping 127.0.0.1 -n 100 > nul
 cd ..
 cd tests
+python -m pip install xmlrunner
+python -m pip install flask_sqlalchemy
 python bookings.py
 python movies.py
 python showtimes.py
